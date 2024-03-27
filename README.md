@@ -24,8 +24,8 @@ Unordered lists are indicated by \* or \-, **followed by a space**, then the con
 Ordered lists are indicated by numbers and \., **followed by a space**, then the content of the list item.
 
 ## 注释 / Comments
-使用六级标题######来表示注释。注释符号仅作用于一行。
-Use level 6 heading ###### to indicate comments. The comment symbol only takes effect for one line.
+**使用六级标题######来表示注释**。注释符号仅作用于一行。
+**Use level 6 heading ###### to indicate comments**. The comment symbol only takes effect for one line.
 
 ## 表格 / Tables
 表格的书写方式和GFM规则的MarkDown相同，**不同栏之间用\|分隔，表格左右边界均标记\|。首先先写一行表头，然后写一行用一组短横代替内容的分隔行，然后写表格内容**。
