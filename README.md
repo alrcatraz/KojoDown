@@ -93,6 +93,9 @@ Quotations can be nested, that is, **use \> within the quotation content to indi
 引用中也可以包含其他KojoDown格式的元素，如标题、列表等。
 Quotations can also contain other KojoDown format elements, such as headings, lists, etc.
 
+**在KojoDown中，引用主要用于标志展示下文文本的判断条件**。
+**In KojoDown, quotations are mainly used to indicate the judgment condition of the following text**.
+
 ## 代码块 / Code Blocks
 使用三个反引号（\`\`\`）来表示代码块，随后换行书写内部内容。原本MarkDown的代码块语法中，**反引号后不换行可以标注程序语言名称，KojoDown则根据口上文件的使用需要更改为了记录文本的格式化指令**。
 Use three backticks (\`\`\`) to indicate a code block, followed by a line break and the internal content. In the original MarkDown code block syntax, **the language name can be annotated after the backtick without a line break. KojoDown changes this to record the formatting instructions for the text according to the needs of the Kojo file**.
@@ -101,14 +104,15 @@ Use three backticks (\`\`\`) to indicate a code block, followed by a line break 
 If you need to insert code within a text, use a single backtick (\`) to indicate the code.
 
 ## 选择支 / Choices
-选择支的的写法类似于GFM的待办事项列表，与无序列表类似，使用“\- [->跳转地址] 事项名称”的方式来表示。
+选择支的的写法类似于将链接语法用无序列表组织起来，**形如 - [按钮文本] @跳转地址 或 - [按钮文本] {{点击按钮后的插入文本}}**
+The writing of the choices is similar to organizing the link syntax with an unordered list, **in the form of - [button text] @ jump address or - [button text] {{inserted text after clicking the button}}**
 
 ## 逻辑判断 / Logic
 |判断符号|含义|
 |---|---|
 | ！ |非 not|
-| /> |大于 bigger than|
-| < |小于 smaller than|
+| \> |大于 greater than|
+| \< |小于 less than|
 | >= |大于等于 bigger/equal|
 | <= |小于等于 smaller/equal|
 | == |等于 equal|
@@ -120,14 +124,14 @@ If you need to insert code within a text, use a single backtick (\`) to indicate
 **Use the @ symbol to reference external values/functions**. In general, the purpose of referencing external values/functions is to output text, so it often appears in the form of {{@value}} or {{@function()}}.
 
 ## 锚点、跳转和链接 / Anchor, Jump and Links
-所有跳转地址都使用被叫做锚点的标识符来表示。**在事件标题中，使用&anchor_name来表示锚点**。
+所有跳转地址都使用被叫做锚点的标识符来表示。**在事件标题中，使用&anchor_name来声明锚点**。
 All jump addresses are represented by identifiers called anchors. **In the event title, use &anchor_name to represent the anchor**.
 
-使用 [逻辑判断？->链接地址|->链接地址] {{显示文本|显示文本}} 来表示跳转。第一个地址和文本是判断值为真时的跳转，第二个地址和文本是判断值为假时的跳转，当不需要判断为假的跳转时，|和后面的部分可以省略。
-Use [logical judgment?->link address|->link address] {{display text|display text}} to indicate a jump. The first address and text are the jump when the logical judgment is true, and the second address and text are the jump when the logical judgment is false. When a false jump is not needed, | and the following part can be omitted.
+使用 **[逻辑判断？显示文本|显示文本]@链接地址|@链接地址** 来表示跳转。第一个地址和文本是判断值为真时的跳转，第二个地址和文本是判断值为假时的跳转，当不需要判断为假的跳转时，|和后面的部分可以省略。
+Use **[logical judgment? display text|display text]@link address|@link address** to represent a jump. The first address and text are the jump when the logical judgment is true, and the second address and text are the jump when the logical judgment is false. When a false jump is not needed, | and the following part can be omitted.
 
-使用 [URL]{{显示文本}} 来表示超链接。对于逻辑判断，也和上文对跳转的语法相同。
-Use [URL] (display text) to create a hyperlink. For logical judgments, it is also the same as the syntax for jumps mentioned above.
+使用 [显示文本](URL) 来表示超链接。对于逻辑判断，也和上文对跳转的语法相同。
+Use [display text](URL) to create a hyperlink. For logical judgments, it is also the same as the syntax for jumps mentioned above.
 
 ## 插入内容
 在口上文件中，时常遇到插入诸如角色对主角的称呼、角色自称、细微文本差分等内容。为实现这一功能，提供插入内容的语法。
