@@ -42,26 +42,26 @@ customised_event:
 ### Events
 //事件部分
 
-#### Events_Name @Anchor_Name
+#### Events_Name &Anchor_Name
 //事件名+引用标记，由于事件只占用h4、h5两个层级，因此需要事件编号标明事件层级关系，用事件名表明本段文本的用途
 //事件只记录事件文本和流程，将所有子事件都单独书写，如同C语言不允许在定义函数内部再定义新函数一样
 
-#### 第一次相识 @fst_1
+#### 第一次相识 &fst_1
 “你的酒。”
 [->fst_1.1]
 “Dry Martiny，很经典的配方。”
 
-##### SubEvent_Name @fst_1.1
+##### SubEvent_Name &fst_1.1
 //子事件名+引用标记(子事件编号)，有时是子事件，有时是事件中的条件判断差分，每多一层多加一个点号
     Event_Text1.1
 
-#### 初夜 @fnt_3
-“我们相处了得有 @days 天吧， {{During>=20?真慢:真快}} 呢。”
+#### 初夜 &fnt_3
+“我们相处了得有 {{days}} 天吧， {{During>=20? 真慢 | 真快}} 呢。”
 ```Color(Pink)Italic(True)
 她的眼里浮现出粉色的幽光，显得妖媚且迷人。
 ```
 ……
-@Dirtytalk
+{{@Dirtytalk}}
 //使用@引用函数，如输出随机呻吟的Dirtytalk等
 
 ### Contents

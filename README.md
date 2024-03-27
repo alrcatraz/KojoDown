@@ -101,17 +101,33 @@ Use three backticks (\`\`\`) to indicate a code block, followed by a line break 
 If you need to insert code within a text, use a single backtick (\`) to indicate the code.
 
 ## 选择支 / Choices
-选择支的的写法类似于GFM的待办事项列表，与无序列表类似，使用“\- [ ->跳转地址 ] 事项名称”的方式来表示。
+选择支的的写法类似于GFM的待办事项列表，与无序列表类似，使用“\- [->跳转地址] 事项名称”的方式来表示。
+
+## 逻辑判断 / Logic
+|判断符号|含义|
+|---|---|
+| ！ |非 not|
+| /> |大于 bigger than|
+| < |小于 smaller than|
+| >= |大于等于 bigger/equal|
+| <= |小于等于 smaller/equal|
+| == |等于 equal|
+| != |不等于 not equal|
+| ? \| | 表达式?表达式为真执行\|表达式为假执行|
+
+## 引用外部数值/函数 / External Values/Functions
+**使用@引用外部数值/函数**。一般来说，引用外部数值函数的目的是输出文本，因此往往以{{@value}}或{{@function()}}的形式出现。
+**Use the @ symbol to reference external values/functions**. In general, the purpose of referencing external values/functions is to output text, so it often appears in the form of {{@value}} or {{@function()}}.
 
 ## 锚点、跳转和链接 / Anchor, Jump and Links
 所有跳转地址都使用被叫做锚点的标识符来表示。**在事件标题中，使用&anchor_name来表示锚点**。
 All jump addresses are represented by identifiers called anchors. **In the event title, use &anchor_name to represent the anchor**.
 
-使用 [->链接地址] {{显示文本}} 来表示跳转。
-Use [link address] (display text) to jump to a certain event.
+使用 [逻辑判断？->链接地址|->链接地址] {{显示文本|显示文本}} 来表示跳转。第一个地址和文本是判断值为真时的跳转，第二个地址和文本是判断值为假时的跳转，当不需要判断为假的跳转时，|和后面的部分可以省略。
+Use [logical judgment?->link address|->link address] {{display text|display text}} to indicate a jump. The first address and text are the jump when the logical judgment is true, and the second address and text are the jump when the logical judgment is false. When a false jump is not needed, | and the following part can be omitted.
 
-使用 [URL]{{显示文本}} 来表示超链接。
-Use [URL] (display text) to create a hyperlink.
+使用 [URL]{{显示文本}} 来表示超链接。对于逻辑判断，也和上文对跳转的语法相同。
+Use [URL] (display text) to create a hyperlink. For logical judgments, it is also the same as the syntax for jumps mentioned above.
 
 ## 插入内容
 在口上文件中，时常遇到插入诸如角色对主角的称呼、角色自称、细微文本差分等内容。为实现这一功能，提供插入内容的语法。
@@ -119,6 +135,9 @@ In Kojo files, it is often encountered that the protagonist is addressed by the 
 
 **使用 {{内容}} 来表示插入的内容**。
 **Use {{content}} to insert content**.
+
+插入内容也支持简单的逻辑判断输出，此时的结构为{{逻辑判断? 文本1 | 文本2}}，当逻辑判断为真时，输出文本1，否则输出文本2。在不需要文本2时，|和后面的部分可以省略。
+Inserted content also supports simple logical judgment output. At this time, the structure is {{logical judgment? text1 | text2}}, when the logical judgment is true, the text1 is output, otherwise the text2 is output. When text2 is not needed, | and the following part can be omitted.
 
 ## 分隔线 / Horizontal Rules
 使用**三个或更多星号（\*）或减号（\-）来表示分隔线**。
