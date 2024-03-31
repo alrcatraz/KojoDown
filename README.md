@@ -24,8 +24,8 @@ Unordered lists are indicated by \* or \-, **followed by a space**, then the con
 Ordered lists are indicated by numbers and \., **followed by a space**, then the content of the list item.
 
 ## 注释 / Comments
-**使用六级标题######来表示注释**。注释符号仅作用于一行。
-**Use level 6 heading ###### to indicate comments**. The comment symbol only takes effect for one line.
+**使用六级标题######来表示注释，在行首使用分号也代表此行为注释**。注释符号仅作用于一行。
+**Use level 6 heading ###### to indicate comments, and use semicolon at the beginning of the line to represent that the line is a comment**. The comment symbol only takes effect for one line.
 
 ## 表格 / Tables
 表格的书写方式和GFM规则的MarkDown相同，**不同栏之间用\|分隔，表格左右边界均标记\|。首先先写一行表头，然后写一行用一组短横代替内容的分隔行，然后写表格内容**。
@@ -46,7 +46,7 @@ Use \*\* for bold, \* for italic, and \~\~ for strikethrough. **No spaces are ne
 |-------|------|-------|
 | \\ |反斜杠 backslash| \ \ |
 | \| |竖线 pipe| \\ \| |
-| \` |反引号 backtick| \\ `|
+| \` |反引号 backtick| \ `|
 | \* |星号 asterisk| \\ \*|
 | \_ |下划线 underscore| \\ \_|
 | \{ |左花括号 left brace| \\ \{|
@@ -171,3 +171,39 @@ In the KojoDown file, the usage conventions for various heading levels are as fo
 - H5 子事件
   > 凡从属于某一事件的子事件、分支事件等均使用H5
   > Any sub-events or branch events that belong to a certain event are all used with H5.
+
+## 文档结构
+在口上文件中，由标题组织的文档具有一定的结构如下：
+In the KojoDown file, the document organized by headings has the following structure:
+
+1. # File_Title
+  - 记录文件标题
+  - 在其下记录全文件的元数据，如作者等
+2. ## Chara_Name
+  - 记录角色（部分情况下也可能是地点名称等）
+  1. ### Note
+    - 记录角色的元数据，如作者、版本、最近更新时间等
+  2. ### Description
+    - 记录角色描述、喜好、事件列表等数据
+  3. ### Events
+    - 记录事件文本
+    1. #### Event_Name&Anchor_Name
+      - 记录事件名称和锚点名称，事件名称可以省略
+      - 记录事件流程和文本，其中需要跳转的模组和子系统不内联写入
+      1. ##### SubEvent_Name&Anchor_Name
+        - 记录子事件/模组名称和锚点名称，子事件/模组名称可以省略
+        - 记录事件流程和文本
+      2. ##### SubSystem_Name&Anchor_Name
+    2. #### Event_Name&Anchor_Name
+      1. ##### SubEvent_Name&Anchor_Name
+      2. ##### SubEvent_Name&Anchor_Name
+3. ## Chara_Name
+   1. ### Note
+   2. ### Description
+   3. ### Events
+      1. #### Event_Name&Anchor_Name
+         1. ##### SubEvent_Name&Anchor_Name
+         2. ##### SubEvent_Name&Anchor_Name
+      2. #### Event_Name&Anchor_Name
+         1. ##### SubEvent_Name&Anchor_Name
+         2. ##### SubEvent_Name&Anchor_Name
